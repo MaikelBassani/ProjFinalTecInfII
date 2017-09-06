@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Vidly.Models.Pet>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pets</h2>
+
+@if (@Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Pets</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var pet in Model)
+            {
+                <tr><td>@pet.nome</td></tr>
+            }
+        </tbody>
+    </table> 
+}
+else
+{
+    <p>Não possui nenhum pet cadastrado</p>
+}
+
