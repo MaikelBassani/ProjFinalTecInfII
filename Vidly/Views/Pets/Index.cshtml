@@ -15,7 +15,7 @@
         <tbody>
             @foreach (var pet in Model)
             {
-                <tr><td>@pet.nome</td></tr>
+                <tr><td>@Html.ActionLink(@pet.nome, "Details", new { pet.id })</td></tr>
             }
         </tbody>
     </table> 

@@ -235,7 +235,7 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Pets\Index.cshtml" />
-    <Content Include="Views\Pets\Random.cshtml" />
+    <Content Include="Views\Pets\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

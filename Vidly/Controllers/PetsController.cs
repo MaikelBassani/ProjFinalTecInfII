@@ -10,40 +10,31 @@ namespace Vidly.Controllers
 {
     public class PetsController : Controller
     {
-        public IEnumerable<Pet> GetPets()
+        private ApplicationDbContext _context;
+        public PetsController()
         {
-            return new List<Pet>
-            {
-                new Pet { nome = "Yorkshire", id = 1},
-                new Pet {nome = "Pastor Alemão", id = 2}
-            };
+            _context = new ApplicationDbContext();
         }
-
-        // GET: Movies/Random
-        public ActionResult Random()
+        protected override void Dispose(bool disposing)
         {
-            var pets = new Pet() { nome = "Nada!" };
-
-            var customers = new List<Customer>
-            {
-                new Customer {nome = "Customer 1"},
-                new Customer {nome = "Customer 2"}
-            };
-
-            var viewModel = new RandomPetsViewModel
-            {
-                Pets = pets,
-                Customers = customers
-            };
-
-            return View(viewModel);
+            _context.Dispose();
         }
-
         public ActionResult Index()
         {
-            var animal = GetPets();
-
-            return View(animal);
+            var pets = _context.Pet.ToList();
+            return View(pets);
         }
+        public ActionResult Details(int Id)
+        {
+            var pets = _context.Pet.SingleOrDefault(c => c.id == Id);
+
+
+            if (pets == null)
+                return HttpNotFound();
+
+            return View(pets);
+        }
+
+        
     }
 }
