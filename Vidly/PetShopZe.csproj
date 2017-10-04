@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\EspecieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -173,11 +174,16 @@
     <Compile Include="Migrations\201709062208424_ApplyAnnotationstoCustomerName.Designer.cs">
       <DependentUpon>201709062208424_ApplyAnnotationstoCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710040041271_addspcies.cs" />
+    <Compile Include="Migrations\201710040041271_addspcies.Designer.cs">
+      <DependentUpon>201710040041271_addspcies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Pet.cs" />
+    <Compile Include="Models\Species.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewsModels\CustomersIndexViewModel.cs" />
@@ -236,6 +242,8 @@
     <Content Include="Views\Pets\Index.cshtml" />
     <Content Include="Views\Pets\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Especie\Index.cshtml" />
+    <Content Include="Views\Especie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709062208424_ApplyAnnotationstoCustomerName.resx">
       <DependentUpon>201709062208424_ApplyAnnotationstoCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710040041271_addspcies.resx">
+      <DependentUpon>201710040041271_addspcies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,10 +7,12 @@ using Vidly.Models;
 
 namespace Vidly.Controllers
 {
-    public class PetsController : Controller
+    public class EspecieController : Controller
     {
+        //
+        // GET: /Especie/
         private ApplicationDbContext _context;
-        public PetsController()
+        public EspecieController()
         {
             _context = new ApplicationDbContext();
         }
@@ -20,22 +22,18 @@ namespace Vidly.Controllers
         }
         public ActionResult Index()
         {
-            var pets = _context.Pet.ToList();
-            return View(pets);
+            var especie = _context.Especie.ToList();
+            return View(especie);
         }
         public ActionResult Details(int Id)
         {
-            var pets = _context.Pet.SingleOrDefault(c => c.id == Id);
+            var especies = _context.Especie.SingleOrDefault(c => c.id == Id);
 
 
-            if (pets == null)
+            if (especies == null)
                 return HttpNotFound();
 
-            return View(pets);
+            return View(especies);
         }
-
-        
-
-        
-    }
+	}
 }
