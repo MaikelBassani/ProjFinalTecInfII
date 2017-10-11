@@ -19,18 +19,39 @@
         </thead>
         <tbody>
             @foreach (var especie in Model)
-            {
-                <tr>
-                    <td width="5px"><a href="/Especie/Details/@especie.id">@especie.id</a></td>
-                    <td width="5px">@Html.ActionLink(@especie.nome, "Details", new { especie.id })</td>
-                    <td width="5px"><a href="/Especie/edit/@especie.id"><input type="button" name="botao-ok" value="Editar"></a></td>
-                    <td width="5px"><input type="button" name="botao-ok" value="Remover"></td>
-                </tr>
-            }
+{
+    <tr>
+        <td width="5px"><a href="/Especie/Details/@especie.id">@especie.id</a></td>
+        <td width="5px">@Html.ActionLink(@especie.nome, "Details", new { especie.id })</td>
+        <td width="5px"><a href="/Especie/edit/@especie.id"><input type="button" value="Editar"></a></td>
+        <td width="5px"><button class='btn-link js-delete' data-customer-id='" + data + "'>Nada</button><td>
+    </tr>
+}
         </tbody>
     </table>
 }
 else
 {
     <p>Não possui nenhuma espécie cadastrada.</p>
+}
+@section scripts
+{
+    <script>
+            $("#customers").on("click", ".js-delete",
+                function () {
+                    var button = $(this);
+                    bootbox.confirm("Are you sure you want to delete this customer?", function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/customers/" + button.attr("data-customer-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    table.row(button.parents("tr"))
+                                         .remove().draw();
+                                }
+                            });
+                        }
+                    });
+                });
+    </script>
 }
