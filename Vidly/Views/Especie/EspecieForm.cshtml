@@ -1,0 +1,16 @@
+﻿@model Vidly.ViewsModels.EspecieFormViewModels
+@{
+    ViewBag.Title = Model.Title;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "Especie"))
+{
+     @Html.HiddenFor(m => m.Especie.id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Especie.nome)
+        @Html.TextBoxFor(m => m.Especie.nome, new { @class = "form-control" })
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

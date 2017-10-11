@@ -1,0 +1,14 @@
+﻿@model Vidly.ViewsModels.CustomerFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@using (Html.BeginForm("Save", "Customers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.nome)
+        @Html.TextBoxFor(m => m.Customer.nome, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

@@ -4,23 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<center><h2>Especies</h2></center>
+<center><h2>Espécies</h2></center>
 
 @if (@Model.Any())
 {
-    <table class="table table-bordered table-hover">
+    <table  class=" table table-bordered table-hover">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Editar</th>
+                <th>Remover</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var especie in Model)
             {
                 <tr>
-                    <td><a href="/Especie/Details/@especie.id">@especie.id</a></td>
-                    <td>@Html.ActionLink(@especie.nome, "Details", new { especie.id })</td>
+                    <td width="5px"><a href="/Especie/Details/@especie.id">@especie.id</a></td>
+                    <td width="5px">@Html.ActionLink(@especie.nome, "Details", new { especie.id })</td>
+                    <td width="5px"><a href="/Especie/edit/@especie.id"><input type="button" name="botao-ok" value="Editar"></a></td>
+                    <td width="5px"><input type="button" name="botao-ok" value="Remover"></td>
                 </tr>
             }
         </tbody>
@@ -28,5 +32,5 @@
 }
 else
 {
-    <p>Não possui nenhuma especie cadastrada.</p>
+    <p>Não possui nenhuma espécie cadastrada.</p>
 }
