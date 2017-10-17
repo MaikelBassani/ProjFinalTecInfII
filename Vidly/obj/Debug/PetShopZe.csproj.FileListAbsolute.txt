@@ -113,3 +113,4 @@ C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII-master\Vidly\obj\Deb
 C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII-master\Vidly\obj\Debug\Vidly.dll
 C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII-master\Vidly\obj\Debug\Vidly.pdb
 C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII-master\Vidly\obj\Debug\Vidly.Migrations.addspcies.resources
+C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII-master\Vidly\obj\Debug\Vidly.Migrations.atualizaespecie.resources

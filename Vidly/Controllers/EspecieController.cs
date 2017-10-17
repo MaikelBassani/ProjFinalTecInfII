@@ -48,13 +48,13 @@ namespace Vidly.Controllers
                 Especie = especie
 
             };
-
+            
             return View("EspecieForm", viewModel);
         }
-        [HttpPost] // só será acessada com POST
+        [HttpPost]
         public ActionResult Save(Species especie)
         {
-
+         
             if (especie.id == 0)
             {
                 _context.Especie.Add(especie);
@@ -66,9 +66,8 @@ namespace Vidly.Controllers
                 especieInDb.nome = especie.nome;
             }
 
-            // faz a persistência
             _context.SaveChanges();
-            // Voltamos para a lista de clientes
+
             return RedirectToAction("Index");
         }
         public ActionResult New()
@@ -80,5 +79,18 @@ namespace Vidly.Controllers
 
             return View("EspecieForm", viewModel);
         }
+         public ActionResult Delete(int id)
+        {
+            var especie = _context.Especie.SingleOrDefault(c => c.id == id);
+
+            if (especie == null)
+                return HttpNotFound();
+
+            _context.Especie.Remove(especie);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+       
 	}
 }
