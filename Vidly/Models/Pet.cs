@@ -7,7 +7,7 @@ namespace Vidly.Models
 {
     public class Pet
     {
-        public int id { set; get;}
+        public int id { set; get; }
         public string nome {set;get;}
     }
 }

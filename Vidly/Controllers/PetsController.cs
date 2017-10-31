@@ -4,38 +4,46 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewsModels;
 
 namespace Vidly.Controllers
 {
     public class PetsController : Controller
     {
-        private ApplicationDbContext _context;
-        public PetsController()
+        public IEnumerable<Pet> GetPets()
         {
-            _context = new ApplicationDbContext();
+            return new List<Pet>
+            {
+                new Pet { nome = "Yorkshire", id = 1},
+                new Pet {nome = "Pastor Alemão", id = 2}
+            };
         }
-        protected override void Dispose(bool disposing)
+
+        // GET: Movies/Random
+        public ActionResult Random()
         {
-            _context.Dispose();
+            var pets = new Pet() { nome = "Nada!" };
+
+            var customers = new List<Customer>
+            {
+                new Customer {nome = "Customer 1"},
+                new Customer {nome = "Customer 2"}
+            };
+
+            var viewModel = new RandomPetsViewModel
+            {
+                Pets = pets,
+                Customers = customers
+            };
+
+            return View(viewModel);
         }
+
         public ActionResult Index()
         {
-            var pets = _context.Pet.ToList();
-            return View(pets);
+            var animal = GetPets();
+
+            return View(animal);
         }
-        public ActionResult Details(int Id)
-        {
-            var pets = _context.Pet.SingleOrDefault(c => c.id == Id);
-
-
-            if (pets == null)
-                return HttpNotFound();
-
-            return View(pets);
-        }
-
-        
-
-        
     }
 }

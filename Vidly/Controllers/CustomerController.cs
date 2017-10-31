@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using System.Data.Entity;
-using Vidly.ViewsModels;
 
 namespace Vidly.Controllers
 {
@@ -36,22 +35,6 @@ namespace Vidly.Controllers
                 return HttpNotFound();
 
             return View(customer);
-        }
-
-        public ActionResult Edit(int id)
-        {
-            var customer = _context.Customers.SingleOrDefault(c => c.id == id);
-
-            if (customer == null)
-                return HttpNotFound();
-
-            var viewModel = new CustomerFormViewModel
-            {
-                Customer = customer
-               
-            };
-
-            return View("CustomerForm", viewModel);
         }
 	}
 }
