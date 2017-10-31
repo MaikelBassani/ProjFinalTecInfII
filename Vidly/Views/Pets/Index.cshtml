@@ -4,24 +4,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Pets</h2>
+<center><h2>Pets</h2></center>
 
 @if (@Model.Any())
 {
     <table class="table table-bordered table-hover">
         <thead>
-            <tr><th>Pets</th></tr>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+            </tr>
         </thead>
         <tbody>
             @foreach (var pet in Model)
             {
-                <tr><td>@pet.nome</td></tr>
+                <tr>
+                    <td><a href="/Pets/Details/@pet.id">@pet.id</a></td>
+                    <td>@Html.ActionLink(@pet.nome, "Details", new { pet.id })</td>
+                </tr>
             }
         </tbody>
     </table> 
 }
 else
 {
-    <p>Não possui nenhum pet cadastrado</p>
+    <p>Não possui nenhum pet cadastrado.</p>
 }
 
