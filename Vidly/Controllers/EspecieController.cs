@@ -54,6 +54,15 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Species especie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new EspecieFormViewModels
+                {
+                    Especie = especie
+                };
+
+                return View("EspecieForm", viewModel);
+            }
          
             if (especie.id == 0)
             {
@@ -72,9 +81,10 @@ namespace Vidly.Controllers
         }
         public ActionResult New()
         {
+
             var viewModel = new EspecieFormViewModels
             {
-                
+                Especie = new Species()
             };
 
             return View("EspecieForm", viewModel);
