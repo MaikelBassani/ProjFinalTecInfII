@@ -1,0 +1,38 @@
+﻿@model Vidly.ViewsModels.PetFormViewModels
+@{
+    ViewBag.Title = Model.Title;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "Pets"))
+{
+  @Html.HiddenFor(m => m.Pet.id)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pet.nome)
+        @Html.TextBoxFor(m => m.Pet.nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Pet.nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pet.raca)
+        @Html.TextBoxFor(m => m.Pet.raca, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Pet.raca)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pet.cor)
+        @Html.TextBoxFor(m => m.Pet.cor, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Pet.cor)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pet.EspecieId)
+        @Html.DropDownListFor(m => m.Pet.EspecieId, new SelectList(Model.Especie, "id", "nome"),"Escolha", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Pet.EspecieId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pet.ClienteId)
+        @Html.DropDownListFor(m => m.Pet.ClienteId, new SelectList(Model.cliente, "id", "nome"),"Escolha", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Pet.ClienteId)
+    </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+}
+

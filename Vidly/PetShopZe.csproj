@@ -182,6 +182,10 @@
     <Compile Include="Migrations\201710172239570_atualizaespecie.Designer.cs">
       <DependentUpon>201710172239570_atualizaespecie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711212127404_chavepets.cs" />
+    <Compile Include="Migrations\201711212127404_chavepets.Designer.cs">
+      <DependentUpon>201711212127404_chavepets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -193,6 +197,7 @@
     <Compile Include="ViewsModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewsModels\CustomersIndexViewModel.cs" />
     <Compile Include="ViewsModels\EspecieFormViewModels.cs" />
+    <Compile Include="ViewsModels\PetFormViewModels.cs" />
     <Compile Include="ViewsModels\PetsIndexViewModel.cs" />
     <Compile Include="ViewsModels\RandomPetsViewModel.cs" />
   </ItemGroup>
@@ -252,6 +257,7 @@
     <Content Include="Views\Especie\Details.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
     <Content Include="Views\Especie\EspecieForm.cshtml" />
+    <Content Include="Views\Pets\PetForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710172239570_atualizaespecie.resx">
       <DependentUpon>201710172239570_atualizaespecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212127404_chavepets.resx">
+      <DependentUpon>201711212127404_chavepets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
