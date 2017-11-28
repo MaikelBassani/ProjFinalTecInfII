@@ -13,6 +13,9 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Raca</th>
+                <th>Cliente</th>
+                <th>Especie</th>
                 <th>Editar</th>
                 <th>Remover</th>
             </tr>
@@ -25,8 +28,9 @@
                     <td>@Html.ActionLink(@pet.nome, "Details", new { pet.id })</td>
                     <td>@pet.raca</td>
                     <td>@pet.cliente.nome</td>
-                    <td width="5px"><a href="/Pet/edit/@pet.id"><input type="button" value="Editar"></a></td>
-                    <td width="5px"><a href="/Pet/delete/@pet.id"><input type="button" value="Remover"></a></td>
+                    <td>@pet.Especie.nome</td>
+                    <td width="5px"><a href="/Pets/edit/@pet.id"><input type="button" value="Editar"></a></td>
+                    <td width="5px"><a href="/Pets/delete/@pet.id"><input type="button" value="Remover"></a></td>
                 </tr>
             }
         </tbody>

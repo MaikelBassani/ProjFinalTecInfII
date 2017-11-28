@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewsModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -21,7 +22,7 @@ namespace Vidly.Controllers
         }
         public ActionResult Index()
         {
-            var pets = _context.Pet.ToList();
+            var pets = _context.Pet.Include(c => c.cliente).Include(c => c.Especie).ToList();
             return View(pets);
         }
         public ActionResult Details(int Id)
@@ -41,10 +42,13 @@ namespace Vidly.Controllers
             if (pet == null)
                 return HttpNotFound();
 
+            var especie = _context.Especie.ToList();
+            var cliente = _context.Customers.ToList();
             var viewModel = new PetFormViewModels
             {
-                Pet = pet
-
+                Pet = pet,
+                Especie = especie,
+                cliente = cliente
             };
 
             return View("PetForm", viewModel);
