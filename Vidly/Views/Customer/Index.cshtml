@@ -3,21 +3,37 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<center><h2>Espécies</h2></center>
+
 @if (@Model.Any())
 {
-    <table class="table table-bordered table-hover">
+    <table class=" table table-bordered table-hover">
         <thead>
-            <tr><th>Clientes</th></tr>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Enderceço</th>
+                <th>Editar</th>
+                <th>Remover</th>
+            </tr>
         </thead>
         <tbody>
             @foreach (var customer in Model)
             {
-                <tr><td>@Html.ActionLink(@customer.nome, "Details", new { customer.id })</td></tr>
+                <tr>
+                    <td width="5px"><a href="/Especie/Details/@customer.id">@customer.id</a></td>
+                    <td width="5px">@Html.ActionLink(@customer.nome, "Details", new { customer.id })</td>
+                    <td width="5px">@customer.endereco</a></td>
+                    <td width="5px"><a href="/Especie/edit/@customer.id"><input type="button" value="Editar"></a></td>
+                    <td width="5px"><a href="/Especie/delete/@customer.id"><input type="button" value="Remover"></a></td>
+                </tr>
             }
         </tbody>
     </table>
+
+    @Html.ActionLink("Nova especie", "New", null, new { @class = "btn btn-primary" })
 }
 else
 {
-    <p>We don't have any customers yet.</p>
+    <p>Não possui nenhuma espécie cadastrada.</p>
 }

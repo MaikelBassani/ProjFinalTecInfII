@@ -186,6 +186,18 @@
     <Compile Include="Migrations\201711212127404_chavepets.Designer.cs">
       <DependentUpon>201711212127404_chavepets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711292202593_createusers.cs" />
+    <Compile Include="Migrations\201711292202593_createusers.Designer.cs">
+      <DependentUpon>201711292202593_createusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711292204421_teste1.cs" />
+    <Compile Include="Migrations\201711292204421_teste1.Designer.cs">
+      <DependentUpon>201711292204421_teste1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052130250_customer.cs" />
+    <Compile Include="Migrations\201712052130250_customer.Designer.cs">
+      <DependentUpon>201712052130250_customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -258,6 +270,7 @@
     <Content Include="Views\Customer\CustomerForm.cshtml" />
     <Content Include="Views\Especie\EspecieForm.cshtml" />
     <Content Include="Views\Pets\PetForm.cshtml" />
+    <Content Include="Views\Especie\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -284,6 +297,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711212127404_chavepets.resx">
       <DependentUpon>201711212127404_chavepets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711292202593_createusers.resx">
+      <DependentUpon>201711292202593_createusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711292204421_teste1.resx">
+      <DependentUpon>201711292204421_teste1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052130250_customer.resx">
+      <DependentUpon>201712052130250_customer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

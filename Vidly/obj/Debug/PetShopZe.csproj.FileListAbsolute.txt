@@ -175,3 +175,6 @@ C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\Vidl
 C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\PetShopZe.csproj.GenerateResource.Cache
 C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\Vidly.dll
 C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\Vidly.pdb
+C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\Vidly.Migrations.createusers.resources
+C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\Vidly.Migrations.teste1.resources
+C:\Users\maikel.bassani\Desktop\trabalhos\ProjFinalTecInfII\Vidly\obj\Debug\Vidly.Migrations.customer.resources

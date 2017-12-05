@@ -24,7 +24,10 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             var especie = _context.Especie.ToList();
-            return View(especie);
+            if (User.IsInRole("CanManageCustomers")) 
+                return View(especie);
+ 
+            return View("ReadOnlyIndex", especie);
         }
         public ActionResult Details(int Id)
         {
@@ -36,6 +39,7 @@ namespace Vidly.Controllers
 
             return View(especies);
         }
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Edit(int id)
         {
             var especie = _context.Especie.SingleOrDefault(c => c.id == id);
@@ -52,6 +56,7 @@ namespace Vidly.Controllers
             return View("EspecieForm", viewModel);
         }
         [HttpPost]
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Save(Species especie)
         {
             if (!ModelState.IsValid)
@@ -79,6 +84,7 @@ namespace Vidly.Controllers
 
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult New()
         {
 
@@ -89,6 +95,7 @@ namespace Vidly.Controllers
 
             return View("EspecieForm", viewModel);
         }
+        [Authorize(Roles = "CanManageCustomers")]
          public ActionResult Delete(int id)
         {
             var especie = _context.Especie.SingleOrDefault(c => c.id == id);
