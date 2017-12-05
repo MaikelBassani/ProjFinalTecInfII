@@ -163,6 +163,7 @@
     <Compile Include="Controllers\EspecieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,11 +199,16 @@
     <Compile Include="Migrations\201712052130250_customer.Designer.cs">
       <DependentUpon>201712052130250_customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712052313555_produto.cs" />
+    <Compile Include="Migrations\201712052313555_produto.Designer.cs">
+      <DependentUpon>201712052313555_produto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Pet.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -211,6 +217,7 @@
     <Compile Include="ViewsModels\EspecieFormViewModels.cs" />
     <Compile Include="ViewsModels\PetFormViewModels.cs" />
     <Compile Include="ViewsModels\PetsIndexViewModel.cs" />
+    <Compile Include="ViewsModels\ProdutoFormViewModel.cs" />
     <Compile Include="ViewsModels\RandomPetsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +278,12 @@
     <Content Include="Views\Especie\EspecieForm.cshtml" />
     <Content Include="Views\Pets\PetForm.cshtml" />
     <Content Include="Views\Especie\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Customer\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Pets\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\ProductForm.cshtml" />
+    <Content Include="Views\Product\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712052130250_customer.resx">
       <DependentUpon>201712052130250_customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052313555_produto.resx">
+      <DependentUpon>201712052313555_produto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

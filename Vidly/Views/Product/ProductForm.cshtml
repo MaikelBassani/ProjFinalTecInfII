@@ -1,0 +1,33 @@
+﻿@model Vidly.ViewsModels.ProdutoFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "Produto"))
+{
+    @Html.HiddenFor(m => m.Produto.id)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Produto.nome)
+        @Html.TextBoxFor(m => m.Produto.nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Produto.nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Produto.quant)
+        @Html.TextBoxFor(m => m.Produto.quant, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Produto.quant)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Produto.preco)
+        @Html.TextBoxFor(m => m.Produto.preco, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Produto.preco)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Produto.descricao)
+        @Html.TextBoxFor(m => m.Produto.descricao, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Produto.descricao)
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+

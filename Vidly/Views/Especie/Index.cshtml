@@ -29,10 +29,9 @@
 }
         </tbody>
     </table>
-    
-    @Html.ActionLink("Nova especie", "New", null, new { @class = "btn btn-primary" })
 }
 else
 {
     <p>Não possui nenhuma espécie cadastrada.</p>
 }
+@Html.ActionLink("Nova especie", "New", null, new { @class = "btn btn-primary" })

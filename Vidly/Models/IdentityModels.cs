@@ -17,6 +17,7 @@ namespace Vidly.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Pet> Pet { get; set; }
         public DbSet<Species> Especie { get; set; }
+        public DbSet<Product> Produto { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection")
             

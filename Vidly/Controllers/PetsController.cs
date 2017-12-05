@@ -23,7 +23,10 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             var pets = _context.Pet.Include(c => c.cliente).Include(c => c.Especie).ToList();
-            return View(pets);
+            if (User.IsInRole("CanManageCustomers"))
+                return View(pets);
+
+            return View("ReadOnlyIndex", pets);
         }
         public ActionResult Details(int Id)
         {
@@ -35,6 +38,7 @@ namespace Vidly.Controllers
 
             return View(pets);
         }
+         [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Edit(int id)
         {
             var pet = _context.Pet.SingleOrDefault(c => c.id == id);
@@ -54,9 +58,9 @@ namespace Vidly.Controllers
             return View("PetForm", viewModel);
         }
         [HttpPost]
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Save(Pet pet)
         {
-            Response.Write("<script>alert('" + pet.nome + "')</script>");
             if (!ModelState.IsValid)
             {
                 var viewModel = new PetFormViewModels
@@ -88,6 +92,7 @@ namespace Vidly.Controllers
 
             return RedirectToAction("Index");
         }
+         [Authorize(Roles = "CanManageCustomers")]
         public ActionResult New()
         {
             var especie = _context.Especie.ToList();
@@ -101,6 +106,7 @@ namespace Vidly.Controllers
 
             return View("PetForm", viewModel);
         }
+         [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Delete(int id)
         {
             var pet = _context.Pet.SingleOrDefault(c => c.id == id);

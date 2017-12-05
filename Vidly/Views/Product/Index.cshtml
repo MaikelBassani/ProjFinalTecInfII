@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Vidly.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Produtos</h2></center>
+
+@if (@Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Editar</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model)
+            {
+                <tr>
+                    <td><a href="/Product/Details/@produto.id">@produto.id</a></td>
+                    <td>@Html.ActionLink(@produto.nome, "Details", new { produto.id })</td>
+                    <td>@produto.preco</td>
+                    <td width="5px"><a href="/Product/edit/@produto.id"><input type="button" value="Editar"></a></td>
+                    <td width="5px"><a href="/Product/delete/@produto.id"><input type="button" value="Remover"></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não possui nenhum produto cadastrado.</p>
+}
+@Html.ActionLink("Novo produto", "New", null, new { @class = "btn btn-primary" })

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Vidly.Models.Pet>
+@{
+    ViewBag.Title = "ReadOnlyIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Pets</h2></center>
+
+@if (@Model.Any())
+{
+    <table class=" table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Raca</th>
+                <th>Cliente</th>
+                <th>Especie</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pet in Model)
+            {
+                <tr>
+                    <td>@pet.id</td>
+                    <td>@pet.nome</td>
+                    <td>@pet.raca</td>
+                    <td>@pet.cliente.nome</td>
+                    <td>@pet.Especie.nome</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não possui nenhuma espécie cadastrada.</p>
+}
