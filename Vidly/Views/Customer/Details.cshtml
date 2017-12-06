@@ -3,11 +3,14 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>Dados cliente</h2>
+<hr />
 
-<h2>@Model.id</h2>
-<h2>@Model.nome</h2>
-<h2>@Model.cpf</h2>
-<h2>@Model.endereco</h2>
-<h2>@Model.bairro</h2>
-<h2>@Model.num_casa</h2>
-
+<ul>
+    <li>Id: @Model.id</li>
+    <li>Nome: @Model.nome</li>
+    <li>CPF: @Model.cpf</li>
+    <li>Endereço: @Model.endereco</li>
+    <li>Bairro: @Model.bairro</li>
+    <li>Nº Casa: @Model.num_casa</li>
+</ul>

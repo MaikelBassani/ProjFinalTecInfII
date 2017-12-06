@@ -3,9 +3,13 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>Dados produto</h2>
+<hr />
 
-<h2>@Model.id</h2>
-<h2>@Model.nome</h2>
-<h2>@Model.quant</h2>
-<h2>@Model.preco</h2>
-<h2>@Model.descricao</h2>
+<ul>
+    <li>Id: @Model.id</li>
+    <li>Nome: @Model.nome</li>
+    <li>Quantidade: @Model.quant</li>
+    <li>preço: @Model.preco</li>
+    <li>Descrição: @Model.descricao</li>
+</ul>

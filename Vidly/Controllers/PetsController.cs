@@ -30,7 +30,7 @@ namespace Vidly.Controllers
         }
         public ActionResult Details(int Id)
         {
-            var pets = _context.Pet.SingleOrDefault(c => c.id == Id);
+            var pets = _context.Pet.Include(c => c.cliente).Include(c => c.Especie).SingleOrDefault(c => c.id == Id);;
 
 
             if (pets == null)
